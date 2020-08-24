@@ -1,37 +1,50 @@
 Role Name
 =========
-orlando.iza
+kmish.orlando_iza
 
-Requirements
-------------
+Requirements Client
+-------------------
 Have docker-compose installed
 used version in to proyect
 docker-compose version 1.23.1, build b02f1306
+## IMPORTANT ##
+## Install default ##
+change variable of file 
+ - install_wordpress.yml (hosts: your_server_name)
 
+## Install Custom one server or list server ##
+change variable of files
+ - install_wordpress.yml (hosts: all)
+ - hostname_install      (your_server_name or list hostname)
+## The command validates if your server has any containers running, it requests the credentials manually and does not use RSA key, additionally it uses the inventory of hostname_install file, do not forget to put the user you will use and the correct path of hostname_install file.
+ansible all -a "sudo docker ps" -u USER_NAME -i /PATH_OF_ROLE/kmish.orlando_iza/hostname_install -kK
+
+## The command validates syntax
+ansible-playbook install_wordpress.yml --syntax-check -i /PATH_OF_ROLE/kmish.orlando_iza/hostname_install
+
+## Run ejecution
+ansible-playbook install_wordpress.yml -u USER_NAME -i /PATH_OF_ROLE/kmish.orlando_iza/hostname_install -kK
+
+## The command validates containers running wordpress and mysql
+ansible all -a "sudo docker ps" -u USER_NAME -i /PATH_OF_ROLE/kmish.orlando_iza/hostname_install -kK
 
 Role Variables
 --------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
+## Variables, Config and credential of wordpress and mysql in the file: docker-compose.yml
 Dependencies
 ------------
+The user to be used in the clients must have installation, reading and writing permissions.
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
 ----------------
 
-    - hosts: server_name
+    - hosts: your_server_name
       roles:
-         - orlando.iza
+         - kmish.orlando_iza
 
 License
 -------
 
 BSD
 
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
