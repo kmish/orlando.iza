@@ -7,6 +7,10 @@ Requirements Client
 Have docker-compose installed
 used version in to proyect
 docker-compose version 1.23.1, build b02f1306
+
+##Install Docker-compose
+https://docs.docker.com/compose/install/
+
 ## IMPORTANT ##
 ## Install default ##
 change variable of file 
