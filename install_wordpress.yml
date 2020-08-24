@@ -1,0 +1,7 @@
+---
+- name: Install Wordpress
+  hosts: 192.168.126.139
+  roles:
+    - orlando.iza
+  become: yes
+

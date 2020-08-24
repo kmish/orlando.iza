@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Orlando Iza
+  description: Install Basic wordpress and mysql in docker using  docker-compose
+  company: Maint
+
+  license: license (GPL-2.0-or-later, MIT, etc)
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+
+  galaxy_tags:
+    - docker
+    - wordpress
+    - mysql
+
+  dependencies:
+    - docker-compose version 1.23.1, build b02f1306 

@@ -1,0 +1,12 @@
+---
+- name: Create directory for copy file docker-compose.yml
+  file:
+    path: /home/docker/wordpress/mysql-data
+    state: directory
+    recurse: yes
+    mode: 0775
+  become: yes
+
+- name: Copy wordpress and mysql configuration file
+  copy: src=files/docker-compose.yml dest=/home/docker/wordpress/docker-compose.yml
+  become: yes

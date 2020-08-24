@@ -1,0 +1,5 @@
+---
+# tasks file for ROL orlando.iza
+- import_tasks: configure.yml
+- import_tasks: install.yml
+

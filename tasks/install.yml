@@ -1,0 +1,7 @@
+---
+- name: Install Wordpress and Mysql according to the file docker-compose.yml
+  command: docker-compose -f /home/docker/wordpress/docker-compose.yml up
+  async: 50
+  poll: 0
+  become: yes
+
