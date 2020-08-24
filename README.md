@@ -28,8 +28,9 @@ ansible-playbook install_wordpress.yml -u USER_NAME -i /PATH_OF_ROLE/kmish.orlan
 ## The command validates containers running wordpress and mysql
 ansible all -a "sudo docker ps" -u USER_NAME -i /PATH_OF_ROLE/kmish.orlando_iza/hostname_install -kK
 
-## Validar instalacion wordpress en client
+## Validate wordpress installation on client
 BROWSER
+
 http://YOURS_IP_CLIENT:8080 
 
 
